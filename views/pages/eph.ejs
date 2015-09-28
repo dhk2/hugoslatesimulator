@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+<div class="container">
+<h2>E Pluribus Hugo</h2>
+<table >
+<% for (y=1;y<=13;y++) { %>
+	<tr><Td colspan="3"><h3><center><%=categories[y];%></center></h3></tr>
+	<TR><th>Points<th> <th><center>ballots</center></tr>
+	<% for (x=0;x<nom.length;x++){ %>
+		<% if (y==nom[x].category) { %>
+			<% if (originalwinners.indexOf(nom[x].work)>=0){nom[x].work="<u><b>"+nom[x].work+"</u></b>";} %>
+			<% if (originalnominees.indexOf(nom[x].work)>=0){nom[x].work="<b>"+nom[x].work+"</b>";} %>
+			<% for (z=0;z<poop.length;z++){if (poop[z].work == nom[x].work){nom[x].work="<font color=\"red\">"+nom[x].work+"</font>"}} %>
+			<tr><td><%- nom[x].points.toFixed(2) %><td><center><%- nom[x].work %><TD><%- nom[x].ballots %></center>		
+	    <% }; %>
+	<%};  %>
+
+<%};  %>
+</table>
+</div>
+
+</body>
+</html>

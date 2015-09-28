@@ -1,0 +1,15 @@
+CREATE TABLE ballots(
+   ID             INT     NOT NULL,
+   CATEGORY       INT     NOT NULL,
+   WORK           CHAR(50),
+   RANK           INT
+   );
+   
+   cat <filename> | psql -U <username> -h <servername> <database> -c "copy <table> from stdin ;"
+   
+   get add .
+   get commit -m "message"
+   git put heruoku master
+   h
+   
+   heroku pg:psql 

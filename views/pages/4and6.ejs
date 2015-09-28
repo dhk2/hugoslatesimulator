@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+<div class="container">
+<h2>Four Votes for 6 slots method</h2>
+<ul>
+<% for (y=1;y<=13;y++) { %>
+	<li><h4><%=categories[y];%></h4>
+	<ol>
+	<% nomcounter=0; %>
+	<% breakscore=0; %>
+	<% for (x=0;x<nom.length;x++){ %>
+		<% if (y==nom[x].category) { %>
+			<% nomcounter++; %>
+			<% if (nomcounter==6) {breakscore=nom[x].points;}; %>
+			<% if (originalwinners.indexOf(nom[x].work)>=0){nom[x].work="<u><b>"+nom[x].work+"</u></b>";}; %>
+			<% if (originalnominees.indexOf(nom[x].work)>=0){nom[x].work="<b>"+nom[x].work+"</b>";}; %>
+			<% for (z=0;z<poop.length;z++){if (poop[z].work == nom[x].work){nom[x].work="<font color=\"red\">"+nom[x].work+"</font>"}}; %>
+			
+			<% if ((nomcounter>6) && (nom[x].points<breakscore)){ %>
+				<li><i><%= nom[x].points %> - <%- nom[x].work %></i></li>
+			<% } else { %>
+				<li><%= nom[x].points %> - <%- nom[x].work %></li>		
+	    <% }; %> 
+	<%};  %>
+<%};  %>
+	
+</ol>
+<%}; %>
+</ul>
+</div>
+<br>
+<br><br>
+<b>bold = 1984 nominees</b>
+<u>underline = 1984 winners</u>
+<i>italic = runner up</i>
+<font color="red">red = puppy slate</font>
+</body>
+</html>

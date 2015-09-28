@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+<body>
+<h1> 1984 Hugo Slate Simulator</h1>
+<p>
+An <a href="https://play.google.com/store/apps/details?id=com.anti_climacticteleservice.hugoslatesimulator">Android App</a> is available at the play store.
+<p>
+
+ <form action = "calculator" method = "get" name = "b">
+     <legend>Which method to use</legend>
+  <fieldset>
+    <input type="radio" name="method" value="current" checked>Current
+
+  <input type="radio" name="method" value="fourandsix">four and six
+
+      <input type="radio" name="method" value="eph">EPH
+
+  <input type="radio" name="method" value="combined">EPH + 4 and 6
+
+  </fieldset>
+ 
+
+  <fieldset>
+  <legend>Slates to add to ballot box</legend>
+  Rabid Puppies  <input type="number" name = "puppies" value="100"> 
+</fieldset>
+
+    <input type="submit" value="calculate nominees">
+
+
+</form> 
+
+
+
+
+</body>
+</html>
