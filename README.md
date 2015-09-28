@@ -1,1 +1,1 @@
-a node.js app to calculate nomintions for the hugo awards using multiple proposed methods.
+A node.js app to calculate nominations for the hugo awards using multiple proposed methods.
